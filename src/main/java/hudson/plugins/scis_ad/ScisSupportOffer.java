@@ -39,7 +39,7 @@ import java.util.Random;
  */
 @Extension
 public class ScisSupportOffer extends AdministrativeMonitor {
-    public volatile boolean active = true;
+    public volatile boolean active;
     public ScisSupportOffer() {
         Hudson h = Hudson.getInstance();
         File marker1 = new File(h.getRootDir(),"secret.key");
@@ -48,13 +48,13 @@ public class ScisSupportOffer extends AdministrativeMonitor {
         long t = Math.max(marker1.lastModified(), marker2.lastModified());
         if (t>0) {
             long d = TimeUnit2.MILLISECONDS.toDays(System.currentTimeMillis() - t);
-//            active = d > 60 && h.getItems().size()>3;
+            active = d > 60 && h.getItems().size()>3
                     // as an attempt to phase this in slowly, even if all the criteria are met,
                     // limit the exposure.
-//                    && new Random().nextInt(3)==0;
+                    && new Random().nextInt(3)==0;
         }
 
-//        active |= Boolean.getBoolean("forceAd"); // for debugging
+        active |= Boolean.getBoolean("forceAd"); // for debugging
     }
 
     public boolean isActivated() {
