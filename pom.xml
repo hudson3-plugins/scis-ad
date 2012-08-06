@@ -41,6 +41,25 @@
       </plugin>
     </plugins>
   </build>
+  
+  <scm>
+    <connection>scm:git:git://github.com/hudson3-plugins/scis-ad.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:hudson3-plugins/scis-ad.git</developerConnection>
+    <url>https://github.com/hudson3-plugins/scis-ad.git</url>
+  </scm>
+  
+  <distributionManagement>
+         <snapshotRepository>
+             <id>sonatype-nexus-snapshots</id>
+             <name>Sonatype Nexus Snapshots</name>
+             <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+         </snapshotRepository>
+         <repository>
+             <id>sonatype-nexus-staging</id>
+             <name>Nexus Release Repository</name>
+             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+         </repository>
+  </distributionManagement>
 </project>  
   
 
