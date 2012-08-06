@@ -36,7 +36,7 @@
   <groupId>org.hudsonci.plugins</groupId>
   <artifactId>scis-ad</artifactId>
   <packaging>hpi</packaging>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
   <name>Hudson Support Subscription Notification Plugin</name>
   <description>Advertisement for Sun Continuous Integration Server</description>
   
